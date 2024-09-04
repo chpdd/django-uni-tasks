@@ -3,6 +3,8 @@ from django.urls import path, include
 
 from . import views
 
+app_name = "uni_tasks"
+
 urlpatterns = [
     path('', views.main, name='main'),
     path('task/<int:task_number>', views.task, name="task"),

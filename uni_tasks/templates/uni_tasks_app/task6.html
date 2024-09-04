@@ -1,38 +1,21 @@
+{% extends 'uni_tasks_app/base_task.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <script src="calculator.js" defer></script>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% block extra_links %}
+    <script src="{% static 'js/task6.js' %}" defer></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/task6.css' %}">
+{% endblock %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Задание 6</title>
-</head>
+{% block page_title %}
+    Задание 6
+{% endblock %}
 
-<body>
-<header>
-    <nav class="header-logo">
-        <img class="header-logo" src="{% static 'media/logo.png' %}" alt="Logo">
-    </nav>
-    <nav class="header-info">
-        <h2 class="header-title">$$$ website?</h2>
-        <h3 class="header-task">Задание 6</h3>
-    </nav>
+{% block header_title %}
+    Задание 6
+{% endblock %}
 
-</header>
-
-<aside>
-    <nav class="aside-link">
-        <a href="{% url 'main' %}"  class="">Главная страница</a>
-    </nav>
-</aside>
-
-<main>
+{% block content %}
     <div class="services_calculator">
         <h1 class="">Калькулятор товаров</h1>
 
@@ -91,17 +74,9 @@
         <label class="" for="number_items">Количество выбранного товара:</label>
         <input type="number" id="number_items" min="1" required>
 
-        <input type="button" id="button_items" onclick="calculate_price_items()" value="Подсчитать стоимость"  required>
+        <input type="button" id="button_items" onclick="calculate_price_items()" value="Подсчитать стоимость" required>
 
         <label for="result_items" class="">Стоимость заказа:</label>
         <div id="result_items" class=""></div>
     </div>
-</main>
-
-    <footer>
-        <p class=" text_in_footer">created by</p>
-        <h3 class=" text_in_footer">Денис Чупилко</h3>
-    </footer>
-</body>
-
-</html>
+{% endblock %}

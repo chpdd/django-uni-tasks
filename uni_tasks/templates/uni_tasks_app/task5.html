@@ -1,38 +1,22 @@
+{% extends 'uni_tasks_app/base_task.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <script src="{% static 'js/task5.js' %}" defer></script>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% block extra_links %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/task5.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Задание 5</title>
-</head>
+    <script src="{% static 'js/task5.js' %}" defer></script>
+{% endblock %}
 
-<body>
-    <header>
-        <nav class="header-logo">
-            <img class="header-logo" src="{% static 'media/logo.png' %}" alt="Logo">
-        </nav>
-        <nav class="header-info">
-            <h2 class="header-title">$$$ website?</h2>
-            <h3 class="header-task">Задание 5</h3>
-        </nav>
+{% block page_title %}
+    Задание 5
+{% endblock %}
 
-    </header>
+{% block header_title %}
+    Задание 5
+{% endblock %}
 
-    <aside>
-        <nav class="aside-link">
-            <a href="{% url 'main' %}"  class="">Главная страница</a>
-        </nav>
-    </aside>
-
-    <main>
-        <div class="calculator">
+{% block content %}
+    <div class="calculator">
             <h1 class="">Калькулятор товаров</h1>
 
             <label for="products" class="">Наименования товаров</label>
@@ -53,12 +37,4 @@
             <label for="result" class="">Стоимость заказа:</label>
             <div id="result" class=""></div>
         </div>
-    </main>
-
-    <footer>
-        <p class=" text_in_footer">created by</p>
-        <h3 class=" text_in_footer">Денис Чупилко</h3>
-    </footer>
-</body>
-
-</html>
+{% endblock %}

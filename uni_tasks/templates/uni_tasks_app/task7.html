@@ -1,43 +1,25 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'uni_tasks_app/base_task.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% load static %}
+
+{% block extra_links %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/task7.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
     <script src="{% static 'js/jquery.js' %}" defer></script>
     <script type="text/javascript" src="{% static 'js/slick.js' %}" defer></script>
     <script src="{% static 'js/task7.js' %}" defer></script>
-    <title>Задание 7</title>
-</head>
+{% endblock %}
 
-<body>
-<header>
-    <nav class="header-logo">
-        <img class="header-logo" src="{% static 'media/logo.png' %}" alt="Logo">
-    </nav>
-    <nav class="header-info">
-        <h2 class="header-title">$$$ website?</h2>
-        <h3 class="header-task">Задание 7</h3>
-    </nav>
+{% block page_title %}
+    Задание 7
+{% endblock %}
 
-</header>
+{% block header_title %}
+    Задание 7
+{% endblock %}
 
-<aside>
-    <nav class="aside-link">
-        <a href="{% url 'main' %}"  class="">Главная страница</a>
-    </nav>
-</aside>
-
-<main>
+{% block content %}
     <div class="gallery">
         {% for jpg_name in jpg_names %}
             <div>
@@ -45,12 +27,4 @@
             </div>
         {% endfor %}
     </div>
-</main>
-
-<footer>
-    <p class=" text_in_footer">created by</p>
-    <h3 class=" text_in_footer">Денис Чупилко</h3>
-</footer>
-</body>
-
-</html>
+{% endblock %}
